@@ -1,0 +1,132 @@
+.App {
+  /* text-align: center; */
+  min-height: 100vh;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: lightblue;
+  padding: 40px;
+}
+
+.content {
+  margin: 80px;
+  display: flex;
+}
+
+.content input {
+  width: 350px;
+  height: 45px;
+  border-radius: 8px solid #ddd;
+  border: 1px solid #eee;
+  padding: 3px;
+}
+.step1 {
+  text-align: center;
+  width: 350px;
+}
+.container h1 {
+  color: dodgerblue;
+  font-size: 40px;
+}
+
+.step2 {
+  text-align: center;
+  width: 350px;
+  margin-left: 100px;
+}
+
+.continnetListName {
+  width: 350px;
+  padding: 0px;
+  background-color: #fff;
+}
+
+.continnetList ul li {
+  text-align:center;
+  height: 52px;
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #eee;
+  font-weight: 600;
+  border: 1px solid #bbb4b4;
+  font-size: 18px;
+}
+
+.continnetList ul .continnetName:hover {
+ background-color: #00baf6;
+ color:#fff
+}
+
+.selectedText {
+  width: 350px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.selectedText p {
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: 25px;
+}
+
+.pickerText {
+  color: darkslategray;
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+.countryCheckbox {
+  width: 30px !important;
+  height: auto !important;
+}
+
+.step2 li {
+  text-align: left !important;
+}
+
+.step3 {
+  margin-left: 100px;
+  align-content: center;
+  text-align: center;
+}
+
+.flags span {
+  font-size: 55px;
+  margin-left: 20px;
+}
+
+button {
+  border: 1px solid #007bff;
+  background: #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+}
+
+.steps {
+  text-decoration: underline;
+}
+
+.paraText{
+  color: darkslategray;
+  font-size: 20px;
+  padding-top: 20px;
+  font-weight: 500;
+}
