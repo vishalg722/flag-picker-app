@@ -3,7 +3,8 @@ import {
   continentsData,
   getListOfContinnets,
 	getCountries,
-	getSelectedFlagList
+  getSelectedFlagList,
+  isChecked
 } from "./utils/util";
 import "./App.css";
 
@@ -83,7 +84,7 @@ const SearchComponent = (props) => {
 	}
 
 	const listOfFlags = getSelectedFlagList(countryList,selectedCountry);
-
+  
   return (
     <>
       <div className="step1">
@@ -128,7 +129,7 @@ const SearchComponent = (props) => {
               <ul className="continnetListName">
                 {countryList[0].map((countries, index) => (
                  <li key={index} className="countryName">
-                    <span> <input onChange = {getSelectedCountry} value = {countries.name} className="countryCheckbox" type="checkbox" name = 'selectedCountry' /> </span> <span>{countries.name}</span>
+                    <span> <input checked={isChecked(countries.name,selectedCountry)} onChange = {getSelectedCountry} value = {countries.name} className="countryCheckbox" type="checkbox" name = 'selectedCountry' /> </span> <span>{countries.name}</span>
                   </li>
                 ))}
               </ul>

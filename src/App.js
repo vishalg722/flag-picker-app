@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import SearchComponent from './SearchComponent';
-import { getCountries } from './utils/util'
-
+import Header from './Header'
 import './App.css';
 
 function App() {
@@ -12,12 +11,10 @@ function App() {
     setContinent(continent)
   }
 
-
-
   return (
     <div className="App">
+      <Header />
       <div className="container">
-        <h1> Flag Picker</h1>
         <p className="pickerText"> This app will help to learn flags arround the world in <span className="steps">3 steps</span>.</p>
       </div>
       <div className='content'>

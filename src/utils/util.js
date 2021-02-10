@@ -211,3 +211,11 @@ export const getSelectedFlagList = (coutries,selectedCountry) => {
 	}
 	return flagList;
 }
+
+export const isChecked = (country,selectedCountryList=[]) => {
+	let check = false;
+	if(country){
+		check = selectedCountryList.indexOf(country) > -1;
+  }
+	return check;
+}
