@@ -62,6 +62,7 @@ const SearchComponent = (props) => {
   const toogleCountry = () => {
     showCountry(!isShowCountry);
     getListofContries();
+    setShow(false);
 	};
 
 	const getSelectedCountry = (event) => {
@@ -88,10 +89,11 @@ const SearchComponent = (props) => {
   return (
     <>
       <div className="step1">
-        <h2> Step 1</h2>
-        <p className="paraText">Select a Continent </p>
+        <h2>Step 1</h2>
+        <p className="paraText">Select a Continent</p>
         <input
           type="text"
+          data-testid="continent"
           className="continnet"
           onClick={toogleContinnet}
 					onChange={onChange}
@@ -99,7 +101,7 @@ const SearchComponent = (props) => {
         />
         <div className="continnetList">
           {isShow && continnetList.length > 0 && (
-            <ul className="continnetListName">
+            <ul className="continnetListName" data-testid="continnetListName">
               {continnetList.map((continnet, index) => (
                 <li
                   onClick={() => selectedValue(continnet)}
@@ -113,23 +115,23 @@ const SearchComponent = (props) => {
           )}
         </div>
         {selectedContinnet && (
-          <div className="selectedText">
-            <h4>You Selected</h4>
-            <p>{selectedContinnet}</p>.
+          <div className="selectedText" data-testid="selectedText">
+            <h4  data-testid="selectedTextHeading">You Selected</h4>
+            <p  data-testid="selectedTextContent">{selectedContinnet}</p>.
           </div>
         )}
       </div>
       {selectedContinnet && (
-        <div className="step2">
+        <div className="step2" data-testid="step2">
           <h2> Step 2</h2>
-          <p className="paraText">Now Select a Country </p>
-          <input type="text" className="continnet" onClick={toogleCountry} />
+          <p className="paraText"  data-testid="selectCountryText">Now Select a Country</p>
+          <input type="text" className="continnet" data-testid="selectCountry" onClick={toogleCountry} />
           <div className="continnetList">
             {isShowCountry && countryList.length > 0 && (
-              <ul className="continnetListName">
+              <ul className="continnetListName" data-testid="countryLists" >
                 {countryList[0].map((countries, index) => (
                  <li key={index} className="countryName">
-                    <span> <input checked={isChecked(countries.name,selectedCountry)} onChange = {getSelectedCountry} value = {countries.name} className="countryCheckbox" type="checkbox" name = 'selectedCountry' /> </span> <span>{countries.name}</span>
+                    <span> <input data-testid={`countryName-${index}`} checked={isChecked(countries.name,selectedCountry)} onChange = {getSelectedCountry} value = {countries.name} className="countryCheckbox" type="checkbox" name = 'selectedCountry' /> </span> <span>{countries.name}</span>
                   </li>
                 ))}
               </ul>
@@ -138,12 +140,12 @@ const SearchComponent = (props) => {
         </div>
       )}
 			{selectedCountry.length > 0 && (
-        <div className="step3">
-          <h2> Selected Flags : </h2>
+        <div className="step3" data-testid="step3">
+          <h2 data-testid="selected-flag">Selected Flags :</h2>
           
-          <div className="continnetList">
+          <div className="continnetList" data-testid="flag-list">
             {selectedCountry.length > 0 && (
-              <div className="flags">
+              <div className="flags" data-testid="flags">
                 {listOfFlags.map((flag, index) => (
                  <span key={index} className="flag">
                     <span>{flag}</span>
@@ -152,7 +154,7 @@ const SearchComponent = (props) => {
               </div>
             )}
           </div>
-					<button onClick={clearFlags}> Clear Flags</button>
+					<button data-testid="clearButton" className="clear-btn" onClick={clearFlags}> Clear Flags</button>
         </div>
       )}
     </>

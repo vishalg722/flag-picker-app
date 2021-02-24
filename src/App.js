@@ -6,7 +6,6 @@ import './App.css';
 function App() {
 
   const [ continent , setContinent] = useState(false);
-  
   const setContinentHandler = (continent) => {
     setContinent(continent)
   }
@@ -15,7 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <p className="pickerText"> This app will help to learn flags arround the world in <span className="steps">3 steps</span>.</p>
+        <p className="pickerText">This app will help to learn flags arround the world in <span className="steps">3 steps</span>.</p>
       </div>
       <div className='content'>
           <SearchComponent setContinentHandler={ setContinentHandler }  />

@@ -26,8 +26,9 @@
 }
 
 .content {
-  margin: 80px;
+  padding-left: 80px;
   display: flex;
+  background-color: lightblue;
 }
 
 .content input {
